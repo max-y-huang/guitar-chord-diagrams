@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Select } from '@ui-kitten/components';
 import ChordDiagram from './ChordDiagram';
 
 class App extends React.Component {
@@ -28,10 +27,6 @@ class App extends React.Component {
 
     return (
       <View style={this.css.container}>
-        <Select
-          data={this.data}
-          selectedOption={this.data[0]}
-        />
         <ChordDiagram
           markers={[
             {
