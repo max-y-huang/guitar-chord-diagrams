@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
+import { Text } from 'native-base';
 
 const chordDiagramImg = {
   nut: require('./assets/chord-diagram-nut.png'),
@@ -10,7 +11,7 @@ class ChordDiagram extends React.Component {
 
   css = StyleSheet.create({
     container: {
-      margin: 24,
+      margin: 0,
       paddingTop: 48,
       paddingBottom: 12,
       position: 'relative'

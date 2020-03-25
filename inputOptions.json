@@ -1,0 +1,20 @@
+{
+  "roots": [
+    { "name": "A",     "value": 0 },
+    { "name": "A#/Bb", "value": 1 },
+    { "name": "B",     "value": 2 },
+    { "name": "C",     "value": 3 },
+    { "name": "C#/Db", "value": 4 },
+    { "name": "D",     "value": 5 },
+    { "name": "D#/Eb", "value": 6 },
+    { "name": "E",     "value": 7 },
+    { "name": "F",     "value": 8 },
+    { "name": "F#/Gb", "value": 9 },
+    { "name": "G",     "value": 10 },
+    { "name": "G#/Ab", "value": 11 }
+  ],
+  "types": [
+    { "name": "Major", "value": "maj" },
+    { "name": "Minor", "value": "min" }
+  ]
+}
