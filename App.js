@@ -27,10 +27,6 @@ class App extends React.Component {
 
     return (
       <View style={this.css.container}>
-        <Select
-          data={this.data}
-          selectedOption={this.data[0]}
-        />
         <ChordDiagram
           markers={[
             {
