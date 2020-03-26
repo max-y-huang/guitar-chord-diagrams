@@ -12,16 +12,6 @@
       ]
     },
     {
-      "root": 8,
-      "type": "min",
-      "stringData": [ "", "", "", "", "", "" ],
-      "markers": [
-        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 0 , "end": 5 } },
-        { "type": "normal", "finger": 3, "fret": 3, "string": 1 },
-        { "type": "normal", "finger": 4, "fret": 3, "string": 2 }
-      ]
-    },
-    {
       "root": 1,
       "type": "maj",
       "stringData": [ "X", "", "", "", "", "" ],
@@ -33,6 +23,27 @@
       ]
     },
     {
+      "root": 6,
+      "type": "maj",
+      "stringData": [ "X", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 1, "string": 2 },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 3 },
+        { "type": "normal", "finger": 4, "fret": 4, "string": 4 },
+        { "type": "normal", "finger": 2, "fret": 3, "string": 5 }
+      ]
+    },
+    {
+      "root": 8,
+      "type": "min",
+      "stringData": [ "", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 0 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 1 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 2 }
+      ]
+    },
+    {
       "root": 1,
       "type": "min",
       "stringData": [ "X", "", "", "", "", "" ],
@@ -41,6 +52,162 @@
         { "type": "normal", "finger": 3, "fret": 3, "string": 2 },
         { "type": "normal", "finger": 4, "fret": 3, "string": 3 },
         { "type": "normal", "finger": 2, "fret": 2, "string": 4 }
+      ]
+    },
+    {
+      "root": 6,
+      "type": "min",
+      "stringData": [ "X", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 1, "string": 2 },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 3 },
+        { "type": "normal", "finger": 4, "fret": 4, "string": 4 },
+        { "type": "normal", "finger": 2, "fret": 2, "string": 5 }
+      ]
+    },
+    {
+      "root": 9,
+      "type": "maj7",
+      "stringData": [ "", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 2, "string": 0 },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 3 },
+        { "type": "normal", "finger": 2, "fret": 2, "string": 4 },
+        { "type": "normal", "finger": 1, "fret": 1, "string": 5 }
+      ]
+    },
+    {
+      "root": 1,
+      "type": "maj7",
+      "stringData": [ "X", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 1 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 2, "fret": 2, "string": 3 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 4 }
+      ]
+    },
+    {
+      "root": 6,
+      "type": "maj7",
+      "stringData": [ "X", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 1, "string": 2 },
+        { "type": "bar", "finger": 3, "fret": 3, "string": { "start": 3 , "end": 5 } }
+      ]
+    },
+    {
+      "root": 8,
+      "type": "min7",
+      "stringData": [ "", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 2, "fret": 1, "string": 0 },
+        { "type": "bar", "finger": 3, "fret": 1, "string": { "start": 2 , "end": 5 } }
+      ]
+    },
+    {
+      "root": 1,
+      "type": "min7",
+      "stringData": [ "X", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 1 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 2, "fret": 2, "string": 4 }
+      ]
+    },
+    {
+      "root": 6,
+      "type": "min7",
+      "stringData": [ "X", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 1, "string": 2 },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 3 },
+        { "type": "bar", "finger": 2, "fret": 2, "string": { "start": 4 , "end": 5 } }
+      ]
+    },
+    {
+      "root": 8,
+      "type": "dom7",
+      "stringData": [ "", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 0 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 1 },
+        { "type": "normal", "finger": 2, "fret": 2, "string": 3 }
+      ]
+    },
+    {
+      "root": 1,
+      "type": "dom7",
+      "stringData": [ "X", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 1 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 4 }
+      ]
+    },
+    {
+      "root": 9,
+      "type": "dim7",
+      "stringData": [ "", "", "", "", "X", "X" ],
+      "markers": [
+        { "type": "normal", "finger": 2, "fret": 2, "string": 0 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 1 },
+        { "type": "normal", "finger": 1, "fret": 1, "string": 2 },
+        { "type": "normal", "finger": 3, "fret": 2, "string": 3 }
+      ]
+    },
+    {
+      "root": 2,
+      "type": "dim7",
+      "stringData": [ "X", "", "", "", "", "X" ],
+      "markers": [
+        { "type": "normal", "finger": 2, "fret": 2, "string": 1 },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 1, "fret": 1, "string": 3 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 4 }
+      ]
+    },
+    {
+      "root": 6,
+      "type": "dim7",
+      "stringData": [ "X", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 1, "string": 2 },
+        { "type": "normal", "finger": 3, "fret": 2, "string": 3 },
+        { "type": "normal", "finger": 2, "fret": 1, "string": 4 },
+        { "type": "normal", "finger": 4, "fret": 2, "string": 5 }
+      ]
+    },
+    {
+      "root": 9,
+      "type": "min7b5",
+      "stringData": [ "", "X", "", "", "", "X" ],
+      "markers": [
+        { "type": "normal", "finger": 2, "fret": 2, "string": 0 },
+        { "type": "normal", "finger": 3, "fret": 2, "string": 2 },
+        { "type": "normal", "finger": 4, "fret": 2, "string": 3 },
+        { "type": "normal", "finger": 1, "fret": 1, "string": 4 }
+      ]
+    },
+    {
+      "root": 1,
+      "type": "min7b5",
+      "stringData": [ "X", "", "", "", "", "X" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 1, "string": 1 },
+        { "type": "normal", "finger": 3, "fret": 2, "string": 2 },
+        { "type": "normal", "finger": 2, "fret": 1, "string": 3 },
+        { "type": "normal", "finger": 4, "fret": 2, "string": 4 }
+      ]
+    },
+    {
+      "root": 6,
+      "type": "min7b5",
+      "stringData": [ "X", "X", "", "", "", "" ],
+      "markers": [
+        { "type": "normal", "finger": 1, "fret": 1, "string": 2 },
+        { "type": "bar", "finger": 3, "fret": 2, "string": { "start": 3 , "end": 5 } }
       ]
     }
   ]

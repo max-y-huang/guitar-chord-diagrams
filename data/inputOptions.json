@@ -14,7 +14,12 @@
     { "name": "G#/Ab", "value": 11 }
   ],
   "types": [
-    { "name": "Major", "value": "maj" },
-    { "name": "Minor", "value": "min" }
+    { "name": "Major",  "value": "maj" },
+    { "name": "Minor",  "value": "min" },
+    { "name": "Maj. 7", "value": "maj7" },
+    { "name": "Min. 7", "value": "min7" },
+    { "name": "Dom. 7", "value": "dom7" },
+    { "name": "Dim. 7", "value": "dim7" },
+    { "name": "Min. 7 (b5)", "value": "min7b5" }
   ]
 }
