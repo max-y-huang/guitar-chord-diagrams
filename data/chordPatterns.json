@@ -1,0 +1,47 @@
+{
+  "movable": [
+    {
+      "root": 8,
+      "type": "maj",
+      "stringData": [ "", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 0 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 1 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 2, "fret": 2, "string": 3 }
+      ]
+    },
+    {
+      "root": 8,
+      "type": "min",
+      "stringData": [ "", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 0 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 1 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 2 }
+      ]
+    },
+    {
+      "root": 1,
+      "type": "maj",
+      "stringData": [ "X", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 1 , "end": 5 } },
+        { "type": "normal", "finger": 2, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 3 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 4 }
+      ]
+    },
+    {
+      "root": 1,
+      "type": "min",
+      "stringData": [ "X", "", "", "", "", "" ],
+      "markers": [
+        { "type": "bar", "finger": 1, "fret": 1, "string": { "start": 1 , "end": 5 } },
+        { "type": "normal", "finger": 3, "fret": 3, "string": 2 },
+        { "type": "normal", "finger": 4, "fret": 3, "string": 3 },
+        { "type": "normal", "finger": 2, "fret": 2, "string": 4 }
+      ]
+    }
+  ]
+}

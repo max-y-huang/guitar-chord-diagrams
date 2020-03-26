@@ -19,55 +19,61 @@ class ChordDiagram extends React.Component {
     fretMarker: {
       position: 'absolute',
       top: 0,
+      left: 16,
       height: 48,
       fontSize: 24
+    },
+    stringData: {
+      position: 'absolute',
+      transform: [{ translateY: -15 }],
+      left: 0,
+      fontSize: 20
     }
   });
 
   constructor(props) {
     super(props);
     this.state = {
-      width: 0,
-      height: 0,
       startingFret: props.markers.sort((a, b) => (a.fret - b.fret))[0].fret
     };
   }
 
-  measureView = (event) => {
-    this.setState({
-      width: event.nativeEvent.layout.width,
-      height: event.nativeEvent.layout.height
-    });
-  }
+  getMarkerList = () => this.props.markers.map((marker, i) => (
+    <Marker
+      key={Date.now() + '_' + i}
+      diagramWidth={this.props.width}
+      diagramHeight={this.props.width * 488 / 740}
+      startingFret={this.state.startingFret}
+      type={marker.type}
+      finger={marker.finger}
+      fret={marker.fret}
+      string={marker.string}
+    />
+  ));
 
   render() {
 
     let img = chordDiagramImg[this.state.startingFret === 1 ? 'nut' : 'noNut'];
     let fretMarkerText = this.state.startingFret === 1 ? '' : this.state.startingFret;
 
+    let stringDataOffset = this.props.width * 488 / 740 + 48;
+    let stringDataIncrement = this.props.width * 488 / 740 / 5;
+
     return (
       <View style={{maxWidth: 360}}>
-        <View style={this.css.container} onLayout={(event) => this.measureView(event)}>
-          <Image source={img} style={{width: '100%', height: undefined, maxHeight: '100%', aspectRatio: 740 / 488}} />
+        <View style={this.css.container}>
+          <Image source={img} style={{width: this.props.width, height: undefined, aspectRatio: 740 / 488}} />
           {
-            this.props.markers.map((marker, i) => (
-              <Marker
-                key={i}
-                diagramWidth={this.state.width}
-                diagramHeight={this.state.height - 48 - 12}
-                startingFret={this.state.startingFret}
-                type={marker.type}
-                finger={marker.finger}
-                fret={marker.fret}
-                string={marker.string}
-              />
-            ))
+            Array(6).fill(0).map((val, i) => {
+              return (
+                <Text key={Date.now() + '_' + i} style={[this.css.stringData, {top: stringDataOffset - stringDataIncrement * i}]}>
+                  {this.props.stringData[i]}
+                </Text>
+              )
+            })
           }
-          <Text style={[this.css.fretMarker,
-            {
-              left: this.state.width * 32 / 740
-            }
-          ]}>
+          {this.getMarkerList()}
+          <Text style={[this.css.fretMarker, {left: this.props.width * 92 / 740}]}>
             {fretMarkerText}
           </Text>
         </View>
@@ -89,22 +95,22 @@ class Marker extends React.Component {
       borderRadius: 12,
       textAlign: 'center',
       textAlignVertical: 'center',
-      fontSize: 8
     },
     text: {
       height: '100%',
       textAlign: 'center',
       textAlignVertical: 'center',
-      color: '#ffffff'
+      color: '#ffffff',
+      fontSize: 16
     }
   });
 
   render() {
 
-    let xOffset = this.props.diagramWidth * (32 - 6) / 740;
+    let xOffset = this.props.diagramWidth * (92 - 6) / 740;
     let yOffset = this.props.diagramHeight * (-4) / 488;
 
-    let fretWidth = (this.props.diagramWidth * (740 - 32) / 740) / 5;
+    let fretWidth = (this.props.diagramWidth * (740 - 92) / 740) / 5;
     let fretHeight = this.props.diagramHeight / 5;
 
     let xDiff = this.props.fret - this.props.startingFret;

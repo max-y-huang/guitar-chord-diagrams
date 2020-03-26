@@ -2,20 +2,50 @@ import React from 'react';
 import { View } from 'react-native';
 import { Container, Content, Form, Picker, Item, Label, H3, Header, Body, Title, Spinner, Text } from 'native-base';
 import * as Font from 'expo-font';
-import ChordDiagram from './ChordDiagram';
+import Carousel from './Carousel';
 
-import inputOptions from './inputOptions.json';
+import inputOptions from './data/inputOptions.json';
+import chordPatterns from './data/chordPatterns.json';
 
 class App extends React.Component {
 
   state = {
     isReady: false,
     chordRoot: 0,
-    chordType: 'maj'
+    chordType: 'maj',
+    carouselList: []
   };
 
-  setChordRoot = (value) => this.setState({ chordRoot: value });
-  setChordType = (value) => this.setState({ chordType: value });
+  refreshChords = () => {
+
+    const sortFrets = (a, b) => (a.fret - b.fret);
+    const correctType = (chord) => (chord.type === this.state.chordType);
+    const sortByStartingFret = (a, b) => (a.markers[0].fret - b.markers[0].fret);
+
+    const shiftChord = (chord, shift) => {
+      let newChord = JSON.parse(JSON.stringify(chord));
+      newChord.markers.forEach((val, i) => {
+        newChord.markers[i].fret += shift;
+      });
+      return newChord;
+    }
+
+    let list = [];
+    let listBase = chordPatterns.movable.filter(correctType);
+    listBase.forEach((chord) => {
+      let shift = (this.state.chordRoot - chord.root + 12) % 12;
+      let newChord = shiftChord(chord, shift);
+      newChord.markers = newChord.markers.sort(sortFrets);
+      list.push(newChord);
+    });
+
+    this.setState({
+      carouselList: list.sort(sortByStartingFret)
+    });
+  }
+
+  setChordRoot = (value) => this.setState({ chordRoot: value }, () => this.refreshChords());
+  setChordType = (value) => this.setState({ chordType: value }, () => this.refreshChords());
 
   getChordPickerItems = (key) => inputOptions[key].map((item, i) => <Picker.Item key={i} label={item.name} value={item.value} />);
 
@@ -24,12 +54,11 @@ class App extends React.Component {
     await Font.loadAsync({
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
     });
+    this.refreshChords();
     this.setState({ isReady: true });
   }
 
   render() {
-
-    console.log(this.state.chordRoot, this.state.chordType);
 
     if (!this.state.isReady) {
       return (
@@ -52,42 +81,19 @@ class App extends React.Component {
           <Form>
             <Item inlineLabel>
               <Label>Chord Root</Label>
-              <Picker note mode='dropdown' selectedValue={this.state.chordRoot} onValueChange={this.setChordRoot}>
+              <Picker mode='dropdown' selectedValue={this.state.chordRoot} onValueChange={this.setChordRoot}>
                 {this.getChordPickerItems('roots')}
               </Picker>
             </Item>
             <Item inlineLabel>
               <Label>Chord Type</Label>
-              <Picker note mode='dropdown' selectedValue={this.state.chordType} onValueChange={this.setChordType}>
+              <Picker mode='dropdown' selectedValue={this.state.chordType} onValueChange={this.setChordType}>
                 {this.getChordPickerItems('types')}
               </Picker>
             </Item>
           </Form>
           <H3 style={{marginTop: 32, marginBottom: 16}}>Voicings</H3>
-          <ChordDiagram
-          markers={[
-            {
-              type: 'bar',
-              finger: 1,
-              fret: 13,
-              string: {
-                start: 0, end: 5
-              }
-            },
-            {
-              type: 'normal',
-              finger: 2,
-              fret: 16,
-              string: 2
-            },
-            {
-              type: 'normal',
-              finger: 3,
-              fret: 14,
-              string: 3
-            }
-          ]}
-        />
+          <Carousel list={this.state.carouselList} />
         </Content>
       </Container>
     );
