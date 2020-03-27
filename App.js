@@ -5,10 +5,12 @@ import * as Font from 'expo-font';
 import firebase from './firebase';
 import Carousel from './Carousel';
 
+const useLocalJson = false;
+
 class App extends React.Component {
 
   inputOptions = { roots: [], types: [] };
-  chordPatterns = { movable: [] };
+  chordPatterns = { movable: [], unique: [] };
 
   state = {
     isReady: false,
@@ -28,10 +30,21 @@ class App extends React.Component {
     });
   }
 
+  fetchFromLocal = async () => {
+
+    return new Promise(resolve => {
+      let json = require('./firebase.json');
+      this.inputOptions = json.inputOptions;
+      this.chordPatterns = json.chordPatterns;
+      resolve();
+    })
+  }
+
   refreshChords = () => {
 
     const sortFrets = (a, b) => (a.fret - b.fret);
     const correctType = (chord) => (chord.type === this.state.chordType);
+    const correctTypeAndRoot = (chord) => (chord.type === this.state.chordType && chord.root === this.state.chordRoot);
     const sortByStartingFret = (a, b) => (a.markers[0].fret - b.markers[0].fret);
 
     const shiftChord = (chord, shift) => {
@@ -42,7 +55,7 @@ class App extends React.Component {
       return newChord;
     }
 
-    let list = [];
+    let list = this.chordPatterns.unique.filter(correctTypeAndRoot);
     let listBase = this.chordPatterns.movable.filter(correctType);
     listBase.forEach((chord) => {
       let shift = (this.state.chordRoot - chord.root + 12) % 12;
@@ -66,7 +79,7 @@ class App extends React.Component {
     await Font.loadAsync({
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
     });
-    await this.fetchFromFirebase();
+    await ((useLocalJson) ? this.fetchFromLocal() : this.fetchFromFirebase());
 
     this.refreshChords();
     this.setState({ isReady: true });

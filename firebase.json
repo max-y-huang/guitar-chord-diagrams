@@ -247,6 +247,95 @@
           { "type": "bar", "finger": 3, "fret": 2, "string": { "start": 3 , "end": 5 } }
         ]
       }
+    ],
+    "unique": [
+      {
+        "root": 0,
+        "type": "maj",
+        "stringData": [ "X", "O", "", "", "", "O" ],
+        "markers": [
+          { "type": "normal", "finger": 1, "fret": 2, "string": 2 },
+          { "type": "normal", "finger": 2, "fret": 2, "string": 3 },
+          { "type": "normal", "finger": 3, "fret": 2, "string": 4 }
+        ],
+        "shift": false
+      },
+      {
+        "root": 3,
+        "type": "maj",
+        "stringData": [ "X", "", "", "O", "", "O" ],
+        "markers": [
+          { "type": "normal", "finger": 3, "fret": 3, "string": 1 },
+          { "type": "normal", "finger": 2, "fret": 2, "string": 2 },
+          { "type": "normal", "finger": 1, "fret": 1, "string": 4 }
+        ],
+        "shift": false
+      },
+      {
+        "root": 5,
+        "type": "maj",
+        "stringData": [ "X", "X", "O", "", "", "" ],
+        "markers": [
+          { "type": "normal", "finger": 1, "fret": 2, "string": 3 },
+          { "type": "normal", "finger": 3, "fret": 3, "string": 4 },
+          { "type": "normal", "finger": 2, "fret": 2, "string": 5 }
+        ],
+        "shift": false
+      },
+      {
+        "root": 7,
+        "type": "maj",
+        "stringData": [ "O", "", "", "", "O", "O" ],
+        "markers": [
+          { "type": "normal", "finger": 2, "fret": 2, "string": 1 },
+          { "type": "normal", "finger": 3, "fret": 2, "string": 2 },
+          { "type": "normal", "finger": 1, "fret": 1, "string": 3 }
+        ],
+        "shift": false
+      },
+      {
+        "root": 10,
+        "type": "maj",
+        "stringData": [ "", "", "O", "O", "O", "" ],
+        "markers": [
+          { "type": "normal", "finger": 2, "fret": 3, "string": 0 },
+          { "type": "normal", "finger": 1, "fret": 2, "string": 1 },
+          { "type": "normal", "finger": 3, "fret": 3, "string": 5 }
+        ],
+        "shift": false
+      },
+      {
+        "root": 0,
+        "type": "min",
+        "stringData": [ "X", "O", "", "", "", "O" ],
+        "markers": [
+          { "type": "normal", "finger": 2, "fret": 2, "string": 2 },
+          { "type": "normal", "finger": 3, "fret": 2, "string": 3 },
+          { "type": "normal", "finger": 1, "fret": 1, "string": 4 }
+        ],
+        "shift": false
+      },
+      {
+        "root": 5,
+        "type": "min",
+        "stringData": [ "X", "X", "O", "", "", "" ],
+        "markers": [
+          { "type": "normal", "finger": 2, "fret": 2, "string": 3 },
+          { "type": "normal", "finger": 3, "fret": 3, "string": 4 },
+          { "type": "normal", "finger": 1, "fret": 1, "string": 5 }
+        ],
+        "shift": false
+      },
+      {
+        "root": 7,
+        "type": "min",
+        "stringData": [ "O", "", "", "O", "O", "O" ],
+        "markers": [
+          { "type": "normal", "finger": 2, "fret": 2, "string": 1 },
+          { "type": "normal", "finger": 3, "fret": 2, "string": 2 }
+        ],
+        "shift": false
+      }
     ]
   }  
 }

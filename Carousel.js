@@ -24,6 +24,7 @@ class Carousel extends React.Component {
         width={this.state.width - this.state.itemSpacing}
         stringData={diagram.stringData}
         markers={diagram.markers}
+        shift={('shift' in diagram) ? diagram.shift : true}
       />
     </View>
   ));

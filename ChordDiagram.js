@@ -33,8 +33,13 @@ class ChordDiagram extends React.Component {
 
   constructor(props) {
     super(props);
+
+    let startingFret = 1;
+    if (props.shift) {
+      startingFret = props.markers.sort((a, b) => (a.fret - b.fret))[0].fret;
+    }
     this.state = {
-      startingFret: props.markers.sort((a, b) => (a.fret - b.fret))[0].fret
+      startingFret: startingFret
     };
   }
 
