@@ -2,12 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 import { Container, Content, Form, Picker, Item, Label, H3, Header, Body, Title, Spinner, Text } from 'native-base';
 import * as Font from 'expo-font';
+import firebase from './firebase';
 import Carousel from './Carousel';
 
-import inputOptions from './data/inputOptions.json';
-import chordPatterns from './data/chordPatterns.json';
-
 class App extends React.Component {
+
+  inputOptions = { roots: [], types: [] };
+  chordPatterns = { movable: [] };
 
   state = {
     isReady: false,
@@ -15,6 +16,17 @@ class App extends React.Component {
     chordType: 'maj',
     carouselList: []
   };
+
+  fetchFromFirebase = async () => {
+
+    return new Promise(resolve => {
+      firebase.db.ref().once('value').then(snapshot => {
+        this.inputOptions = snapshot.val().inputOptions;
+        this.chordPatterns = snapshot.val().chordPatterns;
+        resolve();
+      });
+    });
+  }
 
   refreshChords = () => {
 
@@ -31,7 +43,7 @@ class App extends React.Component {
     }
 
     let list = [];
-    let listBase = chordPatterns.movable.filter(correctType);
+    let listBase = this.chordPatterns.movable.filter(correctType);
     listBase.forEach((chord) => {
       let shift = (this.state.chordRoot - chord.root + 12) % 12;
       let newChord = shiftChord(chord, shift);
@@ -47,13 +59,15 @@ class App extends React.Component {
   setChordRoot = (value) => this.setState({ chordRoot: value }, () => this.refreshChords());
   setChordType = (value) => this.setState({ chordType: value }, () => this.refreshChords());
 
-  getChordPickerItems = (key) => inputOptions[key].map((item, i) => <Picker.Item key={i} label={item.name} value={item.value} />);
+  getChordPickerItems = (key) => this.inputOptions[key].map((item, i) => <Picker.Item key={i} label={item.name} value={item.value} />);
 
   async componentDidMount() {
 
     await Font.loadAsync({
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
     });
+    await this.fetchFromFirebase();
+
     this.refreshChords();
     this.setState({ isReady: true });
   }
