@@ -104,17 +104,17 @@ class App extends React.Component {
           </Body>
         </Header>
         <Content style={{paddingLeft: 20, paddingRight: 20, marginTop: 24, marginBottom: 24}}>
-          <H3 style={{marginBottom: 16}}>Input</H3>
+          <H3 style={{marginBottom: 16}}>Chord</H3>
           <Form>
             <Item inlineLabel>
-              <Label>Chord Root</Label>
-              <Picker mode='dropdown' selectedValue={this.state.chordRoot} onValueChange={this.setChordRoot}>
+              <Label>Root</Label>
+              <Picker mode='dropdown' style={{ height: 40 }} selectedValue={this.state.chordRoot} onValueChange={this.setChordRoot}>
                 {this.getChordPickerItems('roots')}
               </Picker>
             </Item>
             <Item inlineLabel>
-              <Label>Chord Type</Label>
-              <Picker mode='dropdown' selectedValue={this.state.chordType} onValueChange={this.setChordType}>
+              <Label>Type</Label>
+              <Picker mode='dropdown' style={{ height: 40 }} selectedValue={this.state.chordType} onValueChange={this.setChordType}>
                 {this.getChordPickerItems('types')}
               </Picker>
             </Item>

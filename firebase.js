@@ -1,6 +1,6 @@
 import firebase from 'firebase';
-import config from './config';
+import credentials from './config';
 
-let fb = firebase.initializeApp(config.firebase);
+let fb = firebase.initializeApp(credentials);
 
 exports.db = fb.database();
